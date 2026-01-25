@@ -1,0 +1,742 @@
+/* ========================================
+   SaasuFy - Saasu Maa Edition Styles
+   Warm Vintage Spotify-Inspired Theme
+   ======================================== */
+
+/* ========================================
+   CSS Variables - Theme System
+   ======================================== */
+
+:root {
+    /* Vintage Warm Colors */
+    --cream-bg: #f5f1e8;
+    --coffee-brown: #6b4423;
+    --muted-gold: #d4a574;
+    --soft-cream: #faf8f3;
+    --warm-shadow: rgba(107, 68, 35, 0.15);
+    --text-primary: #3d2817;
+    --text-secondary: #8b6f47;
+
+    /* Gradients for Playlist Covers */
+    --gradient-1: linear-gradient(135deg, #d4a574 0%, #6b4423 100%);
+    --gradient-2: linear-gradient(135deg, #e8b87e 0%, #a67c52 100%);
+    --gradient-3: linear-gradient(135deg, #c9a882 0%, #8b6f47 100%);
+    --gradient-4: linear-gradient(135deg, #f4d9b8 0%, #d4a574 100%);
+}
+
+/* Theme Variations */
+.theme-cute {
+    --accent-color: #d4a574;
+    --accent-hover: #c99563;
+}
+
+.theme-premium {
+    --cream-bg: #f8f6f1;
+    --coffee-brown: #4a3728;
+    --muted-gold: #c4a05a;
+    --accent-color: #c4a05a;
+    --accent-hover: #b39050;
+}
+
+.theme-meme {
+    --cream-bg: #fff9e6;
+    --coffee-brown: #7d5a3a;
+    --muted-gold: #ffb84d;
+    --accent-color: #ffb84d;
+    --accent-hover: #ffa31a;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cream-bg);
+    color: var(--text-primary);
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(107, 68, 35, 0.02) 2px, rgba(107, 68, 35, 0.02) 4px);
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+
+.app-header {
+    background: var(--soft-cream);
+    border-bottom: 1px solid rgba(107, 68, 35, 0.1);
+    box-shadow: 0 2px 8px var(--warm-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.app-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--coffee-brown);
+    letter-spacing: -0.5px;
+}
+
+.badge-text {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.approved-badge {
+    font-size: 0.65rem;
+    background: var(--muted-gold);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.theme-toggle {
+    background: var(--cream-bg);
+    border: 1px solid rgba(107, 68, 35, 0.2);
+    color: var(--coffee-brown);
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+
+.theme-toggle:hover {
+    background: var(--muted-gold);
+    color: white;
+    border-color: var(--muted-gold);
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+
+.main-content {
+    padding: 1.5rem 0;
+    min-height: calc(100vh - 180px);
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   Now Playing Card
+   ======================================== */
+
+.now-playing-card {
+    background: var(--soft-cream);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px var(--warm-shadow);
+    border: 1px solid rgba(107, 68, 35, 0.1);
+}
+
+.now-playing-cover {
+    width: 56px;
+    height: 56px;
+    background: var(--gradient-1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.now-playing-cover i {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.track-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.artist-name {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.progress-bar-container {
+    height: 4px;
+    background: rgba(107, 68, 35, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--muted-gold);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.play-controls {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: var(--coffee-brown);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 6px;
+    transition: all 0.2s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    color: var(--muted-gold);
+    transform: scale(1.1);
+}
+
+.control-btn.play-btn {
+    background: var(--muted-gold);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.control-btn.play-btn:hover {
+    background: var(--coffee-brown);
+    transform: scale(1.05);
+}
+
+/* ========================================
+   Playlist Cards
+   ======================================== */
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--coffee-brown);
+    margin-bottom: 1rem;
+}
+
+.playlist-card {
+    background: var(--soft-cream);
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--warm-shadow);
+    border: 1px solid rgba(107, 68, 35, 0.08);
+}
+
+.playlist-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--warm-shadow);
+}
+
+.playlist-cover {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.playlist-cover i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.gradient-1 {
+    background: var(--gradient-1);
+}
+
+.gradient-2 {
+    background: var(--gradient-2);
+}
+
+.gradient-3 {
+    background: var(--gradient-3);
+}
+
+.gradient-4 {
+    background: var(--gradient-4);
+}
+
+.playlist-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* ========================================
+   Wrapped Screen
+   ======================================== */
+
+.wrapped-header {
+    padding: 1rem 0;
+}
+
+.wrapped-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--coffee-brown);
+    margin-bottom: 0.5rem;
+}
+
+.wrapped-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.stat-card {
+    background: var(--soft-cream);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px var(--warm-shadow);
+    border: 1px solid rgba(107, 68, 35, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--warm-shadow);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: var(--muted-gold);
+    margin-bottom: 0.75rem;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--coffee-brown);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.special-card {
+    background: linear-gradient(135deg, var(--muted-gold) 0%, var(--coffee-brown) 100%);
+}
+
+.special-card .stat-icon,
+.special-card .stat-number,
+.special-card .stat-label {
+    color: white;
+}
+
+/* ========================================
+   Playlist Detail Screen
+   ======================================== */
+
+.back-btn {
+    color: var(--coffee-brown);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+    color: var(--muted-gold);
+}
+
+.playlist-header {
+    background: var(--soft-cream);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px var(--warm-shadow);
+}
+
+.playlist-cover-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlist-cover-large i {
+    font-size: 3.5rem;
+    color: white;
+}
+
+.playlist-title-large {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--coffee-brown);
+    margin-bottom: 0.75rem;
+}
+
+.playlist-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: var(--cream-bg);
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid rgba(107, 68, 35, 0.15);
+}
+
+.btn-play-all {
+    background: var(--muted-gold);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-play-all:hover {
+    background: var(--coffee-brown);
+    transform: scale(1.05);
+}
+
+.song-list {
+    background: var(--soft-cream);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px var(--warm-shadow);
+}
+
+.song-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+.song-item:hover {
+    background: var(--cream-bg);
+}
+
+.song-number {
+    width: 30px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.song-info {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.song-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+}
+
+.song-note {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0;
+    font-style: italic;
+}
+
+.song-duration {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ========================================
+   Gift Screen
+   ======================================== */
+
+.gift-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 1rem;
+}
+
+.gift-card {
+    background: var(--soft-cream);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 500px;
+    box-shadow: 0 8px 24px var(--warm-shadow);
+    text-align: center;
+    border: 1px solid rgba(107, 68, 35, 0.1);
+}
+
+.gift-icon {
+    font-size: 4rem;
+    color: var(--muted-gold);
+    margin-bottom: 1rem;
+}
+
+.gift-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--coffee-brown);
+    margin-bottom: 1.5rem;
+}
+
+.gift-letter {
+    text-align: left;
+    background: var(--cream-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--muted-gold);
+}
+
+.gift-letter p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.gift-letter p:last-child {
+    margin-bottom: 0;
+}
+
+.gift-signature {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+}
+
+.btn-magic {
+    background: var(--muted-gold);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-magic:hover {
+    background: var(--coffee-brown);
+    transform: scale(1.05);
+}
+
+/* ========================================
+   Bottom Navigation
+   ======================================== */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--soft-cream);
+    border-top: 1px solid rgba(107, 68, 35, 0.1);
+    box-shadow: 0 -2px 12px var(--warm-shadow);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    z-index: 100;
+}
+
+.nav-item {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.nav-item i {
+    font-size: 1.4rem;
+}
+
+.nav-item span {
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    color: var(--muted-gold);
+}
+
+.nav-item.active {
+    color: var(--coffee-brown);
+}
+
+.nav-item.active i {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   Toast
+   ======================================== */
+
+.toast {
+    background: var(--coffee-brown);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px var(--warm-shadow);
+}
+
+.toast-body {
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 576px) {
+    .app-title {
+        font-size: 1.4rem;
+    }
+
+    .approved-badge {
+        display: none;
+    }
+
+    .now-playing-cover {
+        width: 50px;
+        height: 50px;
+    }
+
+    .now-playing-cover i {
+        font-size: 1.2rem;
+    }
+
+    .track-name {
+        font-size: 0.85rem;
+    }
+
+    .artist-name {
+        font-size: 0.7rem;
+    }
+
+    .control-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+
+    .control-btn.play-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .wrapped-title {
+        font-size: 1.5rem;
+    }
+
+    .playlist-cover-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .playlist-cover-large i {
+        font-size: 2.5rem;
+    }
+
+    .playlist-title-large {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .bottom-nav {
+        max-width: 1200px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 16px 16px 0 0;
+    }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+.text-muted-gold {
+    color: var(--muted-gold);
+}
+
+.bg-soft-cream {
+    background-color: var(--soft-cream);
+}
+
+.shadow-warm {
+    box-shadow: 0 4px 12px var(--warm-shadow);
+}

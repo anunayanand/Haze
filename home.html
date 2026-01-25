@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SaasuFy Home Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bf3a0d",
+                        "background-light": "#fcf9f8",
+                        "background-dark": "#221510",
+                        "coffee": "#4E342E",
+                        "paper": "#f5f2e8"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.paper-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBqIcHaUNgutLkbGKk3BEwzp8EXLguf9bwv6ysK1cS3IEkTNAXZb2BPrXIZKmjxDsHy25sIm9vSz7sUgF43MIbG7vMOErwvlQC-RdsdXTBjC9jztlhYgT8ce7svloa_s9nRgBzAJuXcCIsIOHxIxosrTTCm3u4ZaQ5-DwIOcli-hEX5Ws_M20G4ESyp8-bBGj1_qJY8CwlaH7g9cXv5zq_6zwO9pjwlVo-xa_ieV419AjNhuz8-rRmJ8SZSDL6TyeZbAuxfDtB8yxFX)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-coffee antialiased">
+<!-- Main Container -->
+<div class="relative flex h-screen w-full flex-col overflow-hidden bg-paper paper-texture dark:bg-background-dark">
+<!-- TopAppBar -->
+<div class="flex items-center bg-paper/80 backdrop-blur-md p-4 pb-2 justify-between sticky top-0 z-50 dark:bg-background-dark/80">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-2xl">album</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<h2 class="text-coffee dark:text-white text-xl font-bold leading-tight tracking-tight">SaasuFy</h2>
+<span class="text-[10px] uppercase tracking-widest font-bold text-primary">Saasu Maa Edition</span>
+</div>
+<div class="flex items-center justify-end">
+<div class="flex h-7 shrink-0 items-center justify-center rounded-full bg-primary/10 border border-primary/20 px-3">
+<p class="text-primary text-[10px] font-bold uppercase tracking-wider">Bahurani Approved</p>
+</div>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto pb-32">
+<!-- HeadlineText -->
+<div class="px-4 pt-6 pb-2">
+<h1 class="text-coffee dark:text-white tracking-tight text-[32px] font-bold leading-tight">Good Morning,<br/>Saasu Maa</h1>
+<div class="flex gap-2 mt-4 overflow-x-auto pb-2 no-scrollbar">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-coffee/5 border border-coffee/10 px-4">
+<p class="text-coffee dark:text-white/80 text-xs font-semibold uppercase tracking-wider">For You</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-coffee/5 border border-coffee/10 px-4">
+<p class="text-coffee dark:text-white/80 text-xs font-semibold uppercase tracking-wider">Classic Vinyl</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-coffee/5 border border-coffee/10 px-4">
+<p class="text-coffee dark:text-white/80 text-xs font-semibold uppercase tracking-wider">Bhakti</p>
+</div>
+</div>
+</div>
+<!-- Section: Daily Mixes -->
+<div class="mt-4">
+<div class="flex items-center justify-between px-4 pb-2">
+<h2 class="text-coffee dark:text-white text-[22px] font-bold leading-tight tracking-tight">Your Daily Mixes</h2>
+<span class="text-primary text-sm font-bold">See all</span>
+</div>
+<div class="flex overflow-x-auto no-scrollbar">
+<div class="flex items-stretch px-4 gap-6">
+<!-- Mix 1 -->
+<div class="flex h-full flex-col gap-3 text-center min-w-[140px] group">
+<div class="relative bg-center bg-no-repeat aspect-square bg-cover rounded-2xl flex flex-col self-center w-full shadow-lg border-4 border-white dark:border-white/10" data-alt="Vintage record cover with orange floral pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0JUKlzj9sUOgWrZ4o2S5Gciobqd-_thq7vjDlIreRdVUid1dKmhhXsaKuZIUorq6xDvkC1L1dLSFm6lYbsuoVjyfTLoDTruMLSLyXA4gcn_QvtrH-4vMcxcB9c7i-Me5fb_z5FCkZGV1KIOAMZPBgqGBEN4w7D6TGr2xmJRo7GVVNJo_SEQcvgFEuX7Em-6l7z8k_t3tLeNnKbDJO2lVWGYfRkn-Zhv3pVUzXWUS8zFL_Jp1KiQjUjhHfAv5vweu-WJmnghzhcKla");'>
+<div class="absolute inset-0 bg-black/10 group-active:bg-black/30 transition-colors rounded-xl"></div>
+</div>
+<p class="text-coffee dark:text-white text-sm font-bold">Morning Mantras</p>
+</div>
+<!-- Mix 2 -->
+<div class="flex h-full flex-col gap-3 text-center min-w-[140px] group">
+<div class="relative bg-center bg-no-repeat aspect-square bg-cover rounded-2xl flex flex-col self-center w-full shadow-lg border-4 border-white dark:border-white/10" data-alt="Retro cassette tapes stacked in warm colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCDeZ2cwKfD8GIIE0vas6iGLOXKoy_jAXiF0TSZPrea9kcnWnP4Q5M0PfyssuUtaSidqHjjTcHSlV8_2_woqYtAAxlI6IWxutmevrWCLOpcADdyR5Qe6Fo5R9cZLonUxswcwDqdYo4nduiPh0LOWhCQqh8uxP6mr9YD7u8YVreAMOw6MTqnOFeU-BCjRb-hcNdNdCxvuRFMzfiP6AmEjNZMM_aHvmz8QApjpvnUYFHl_qGDfJqdHskSLP3lRYRXm3aJmP6bBHArX5F");'>
+<div class="absolute inset-0 bg-black/10 group-active:bg-black/30 transition-colors rounded-xl"></div>
+</div>
+<p class="text-coffee dark:text-white text-sm font-bold">Retro Classics</p>
+</div>
+<!-- Mix 3 -->
+<div class="flex h-full flex-col gap-3 text-center min-w-[140px] group">
+<div class="relative bg-center bg-no-repeat aspect-square bg-cover rounded-2xl flex flex-col self-center w-full shadow-lg border-4 border-white dark:border-white/10" data-alt="Beautiful Indian embroidery art work" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARhijIUXO-4p2MEpxHgPT4126nbl-pnoTQu7K04kb7gDsaYyCG9EKZdmRU_p7Xo2tZZDb93APdUs74XK1rMj6W6u-qUY3OF_wTmzfWYzccjLlXdW1SIKl4BPGeQ9T_Sk8INpy_21OwFSMRZ-nyte3JG8HAHkEF27Qf-e2PFGSlFrYZ06C2i5KH8m4Fcr8TmEHiHaiPaDKEkwafwYuJu2dc1ids6HzkZBgH3dxVCQYkxsOT54BPpNkvnOY3uh4YxQfff0yY86OsEHuS");'>
+<div class="absolute inset-0 bg-black/10 group-active:bg-black/30 transition-colors rounded-xl"></div>
+</div>
+<p class="text-coffee dark:text-white text-sm font-bold">Bahurani's Favs</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Future Doctor -->
+<div class="mt-8">
+<div class="flex items-center justify-between px-4 pb-2">
+<h2 class="text-coffee dark:text-white text-[22px] font-bold leading-tight tracking-tight">Made for the Future Doctor</h2>
+</div>
+<div class="flex overflow-x-auto no-scrollbar">
+<div class="flex items-stretch px-4 gap-6">
+<!-- Med 1 -->
+<div class="flex h-full flex-col gap-3 min-w-[200px] group">
+<div class="relative bg-center bg-no-repeat aspect-[16/9] bg-cover rounded-2xl flex flex-col w-full shadow-md overflow-hidden" data-alt="Old stethoscope on a vintage desk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9fXks01t5k3h994_fsS4jsh3J3QsSwaRmoOjznsosxdXF8TnT5CkgvWwMXuQaUMOmfE_Hv2EePLhUlOlS9qokTK65Ye5jEHLfpd4xsBdd-h7o1sZmIPNprgjufmaH3nii2QQynQX8kUHjY1yKtrDp8nMoXZ-lORywDoiexDsv-ABZM8uRTuaJ0mgpJNWONjESEoBZCvISDbqk-Kfu_83x1hctbweNUy0Ypi797IUkt0LP5JGgcxpEJllxrkXpt_FYZBpvvMyG-cJT");'>
+<div class="absolute inset-0 bg-gradient-to-t from-coffee/80 to-transparent"></div>
+<div class="absolute bottom-3 left-3">
+<p class="text-white text-xs font-bold uppercase tracking-widest">Focus Beats</p>
+</div>
+</div>
+<p class="text-coffee/60 dark:text-white/60 text-xs px-1">Instrumentals for concentrated study sessions.</p>
+</div>
+<!-- Med 2 -->
+<div class="flex h-full flex-col gap-3 min-w-[200px] group">
+<div class="relative bg-center bg-no-repeat aspect-[16/9] bg-cover rounded-2xl flex flex-col w-full shadow-md overflow-hidden" data-alt="Cozy library with warm lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDumJrcZv5oHH66bpVLaWye5ymvS9WwpiH9TiLG9WSQ29QbEH002me5couUF0RuZzHslBiofY6-jU2xDVLOcx1gT8XYqBYGMYucIqevJDfHrfCIgifmGaMpHWNs9AvuMLVNGbsh6W6rUfLD17_Aehc2sNvhTfeodC8YdA2AP8-_PzbMbKPeu7KgBSbhmF0rwh-nepMYhgymdptEZ1izpdPC_SEvhngP70YdDmIeGQ5XS4Ke99ybMoMdX4jYn0POcIsiaj1MLnvGiY4");'>
+<div class="absolute inset-0 bg-gradient-to-t from-coffee/80 to-transparent"></div>
+<div class="absolute bottom-3 left-3">
+<p class="text-white text-xs font-bold uppercase tracking-widest">Anatomy of Soul</p>
+</div>
+</div>
+<p class="text-coffee/60 dark:text-white/60 text-xs px-1">Healing melodies and calming rhythms.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Now Playing Card -->
+<div class="absolute bottom-4 left-4 right-4 z-50">
+<div class="bg-coffee text-white p-3 rounded-2xl flex items-center justify-between shadow-2xl border border-white/10">
+<div class="flex items-center gap-3">
+<div class="relative size-12 shrink-0 rounded-lg bg-cover bg-center border border-white/20 animate-spin-slow" data-alt="Birthday cake with vintage aesthetic" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOBRJHEZu0UF39sYgLUUOvkSj0IXXmSkaTFjiGcNNaZ4ny15abaKgk6y2tPm3_uEnm9aWy5g1ACmDd1Bhrpilo25CrZLys-ST8Zq5pNGDO0GzUVLkSibq1YT8QFWHEJ8O-1WYSiEKwZze7ExU1S8joQE1UIHLBPt0Bt2kYSwdoc2fhwvnoWCO-nrD08UhSXo-aDlQp3vJp-jkoyukJmvH1sohegnDbzSDP2tzOe_S27SqS0Ce_QemWem7THa8UNioeDfMKNEGSuPWd");'>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="size-2 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold leading-tight">Happy Birthday</p>
+<p class="text-[11px] text-white/70 font-medium">Bahurani</p>
+</div>
+</div>
+<div class="flex items-center gap-4 pr-2">
+<span class="material-symbols-outlined text-white/80">favorite</span>
+<div class="size-10 flex items-center justify-center bg-white text-coffee rounded-full shadow-inner">
+<span class="material-symbols-outlined fill-1">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab Bar -->
+<div class="bg-paper/90 backdrop-blur-xl border-t border-coffee/10 dark:bg-background-dark/90 dark:border-white/10 h-20 flex items-center justify-around px-8 pb-4">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-1">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-coffee/40 dark:text-white/40">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Search</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-coffee/40 dark:text-white/40">
+<span class="material-symbols-outlined">library_music</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Library</span>
+</div>
+</div>
+</div>
+<style>
+        /* Hide scrollbars but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 8s linear infinite;
+        }
+
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>
