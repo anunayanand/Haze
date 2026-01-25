@@ -271,7 +271,7 @@
                 <div class="gift-container">
                     <div class="gift-card">
                         <i class="bi bi-gift gift-icon"></i>
-                        <h3 class="gift-title">Happy Birthday Saasu Maa</h3>
+                        <h3 class="gift-title">Happy Birthday <br>Saasu Maa</h3>
                         <div class="gift-letter">
                             <p>Dear Jigyasha,</p>
                             <p>I'm so proud of you and everything you're achieving. You work so hard for your NEET preparation, and you still manage to cook amazing food. Your dedication inspires me every day.</p>
@@ -351,11 +351,16 @@
         </div>
     </nav>
 
+    <!-- Birthday Audio -->
+    <audio id="birthdayAudio" preload="metadata">
+        <source src="./music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Toast for Magic Message -->
-    <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 11; margin-bottom: 100px;">
-        <div id="magicToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-body">
-                You're the best Saasu Maa. Bahurani is proud of you
+    <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-4" style="z-index: 11; margin-bottom: 7rem;">
+        <div id="magicToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="15000" >
+            <div class="toast-body text-center py-4 px-5">
+                <p class="mb-0" style="font-size: 1.1rem; color: #fff; font-weight: 500;">To recognize a person, we may need to see them… but to truly know them, their words are enough. <br> Happy Birthday Jigyasha!</p>
             </div>
         </div>
     </div>

@@ -499,10 +499,38 @@ function goToHome() {
 
 function showMagic() {
     const toastElement = document.getElementById('magicToast');
+    const birthdayAudio = document.getElementById('birthdayAudio');
+    const playerControls = document.querySelectorAll('.control-btn, .play-btn-large, .progress-bar-track');
+    
+    // Disable music player controls
+    playerControls.forEach(control => {
+        control.style.pointerEvents = 'none';
+        control.style.opacity = '0.5';
+    });
+    
+    // Show the toast for 15 seconds
     const toast = new bootstrap.Toast(toastElement, {
-        delay: 4000
+        delay: 15000
     });
     toast.show();
+    
+    // Play birthday audio
+    if (birthdayAudio) {
+        birthdayAudio.currentTime = 0;
+        birthdayAudio.play().catch(err => console.log('Audio playback failed:', err));
+        
+        // Stop audio and re-enable controls after 15 seconds
+        setTimeout(() => {
+            birthdayAudio.pause();
+            birthdayAudio.currentTime = 0;
+            
+            // Re-enable music player controls
+            playerControls.forEach(control => {
+                control.style.pointerEvents = 'auto';
+                control.style.opacity = '1';
+            });
+        }, 15000);
+    }
 }
 
 // ========================================

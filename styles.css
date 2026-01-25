@@ -15,8 +15,8 @@
     --yt-bg-hover: #3e3e3e;
     --yt-text-primary: #ffffff;
     --yt-text-secondary: #aaaaaa;
-    --yt-accent-red: #ff0000;
-    --yt-accent-red-hover: #cc0000;
+    --yt-accent-red: #a67c52;
+    --yt-accent-red-hover: #a67c52;
 
     /* SaasuFy Custom Gradients */
     --gradient-1: linear-gradient(135deg, #d4a574 0%, #6b4423 100%);
@@ -656,7 +656,8 @@ body {
 
 .special-card {
     grid-column: 1 / -1;
-    background: linear-gradient(135deg, var(--yt-accent-red) 0%, #cc0000 100%);
+    /* background: linear-gradient(135deg, var(--yt-accent-red) 0%, #cc0000 100%); */
+    background-color: var(--yt-accent-red);
 }
 
 .special-card .stat-icon,
@@ -694,6 +695,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
+    line-height: 3rem;
 }
 
 .gift-letter {
