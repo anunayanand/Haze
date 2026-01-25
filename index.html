@@ -14,158 +14,212 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="theme-cute">
+<body>
     
-    <!-- Header -->
-    <header class="app-header">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-between align-items-center py-3">
-                <div>
-                    <h1 class="app-title mb-0">SaasuFy</h1>
-                    <span class="badge-text">Saasu Maa Edition</span>
-                </div>
-                <div class="d-flex align-items-center gap-2">
-                    <span class="approved-badge">Bahurani Approved ✅</span>
-                    <div class="dropdown">
-                        <button class="btn btn-sm theme-toggle dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown">
-                            <i class="bi bi-palette"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
-                            <li><a class="dropdown-item" href="#" onclick="setTheme('cute')">Cute + Friendly 🤎</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="setTheme('premium')">Premium / Aesthetic ✨</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="setTheme('meme')">Funny + Meme 😂</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="d-flex align-items-center gap-2 mb-4">
+                <i class="bi bi-music-note-beamed text-danger" style="font-size: 1.5rem;"></i>
+                <h5 class="mb-0">SaasuFy</h5>
             </div>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
         
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-link active" onclick="switchScreen('home')">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-link" onclick="switchScreen('wrapped')">
+                <i class="bi bi-bar-chart-fill"></i>
+                <span>Wrapped</span>
+            </a>
+            <a href="#" class="nav-link" onclick="switchScreen('gift')">
+                <i class="bi bi-gift-fill"></i>
+                <span>Gift</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-playlists">
+            <h6 class="playlist-section-title">Playlists</h6>
+            <a href="#" class="playlist-link" onclick="openPlaylist('neet-warrior')">
+                <div class="playlist-icon gradient-1">
+                    <i class="bi bi-activity"></i>
+                </div>
+                <span>NEET Warrior Mode</span>
+            </a>
+            <a href="#" class="playlist-link" onclick="openPlaylist('chef-specials')">
+                <div class="playlist-icon gradient-2">
+                    <i class="bi bi-egg-fried"></i>
+                </div>
+                <span>Chef Saasu Maa Specials</span>
+            </a>
+            <a href="#" class="playlist-link" onclick="openPlaylist('soft-break')">
+                <div class="playlist-icon gradient-3">
+                    <i class="bi bi-cup-hot"></i>
+                </div>
+                <span>Soft Break Time</span>
+            </a>
+            <a href="#" class="playlist-link" onclick="openPlaylist('bahurani-picks')">
+                <div class="playlist-icon gradient-4">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+                <span>Bahurani's Picks</span>
+            </a>
+            <a href="#" class="playlist-link" onclick="openPlaylist('morning-walk')">
+                <div class="playlist-icon gradient-1">
+                    <i class="bi bi-sunrise"></i>
+                </div>
+                <span>Morning Walk</span>
+            </a>
+            <a href="#" class="playlist-link" onclick="openPlaylist('chai-and-chill')">
+                <div class="playlist-icon gradient-3">
+                    <i class="bi bi-cup-straw"></i>
+                </div>
+                <span>Chai & Chill</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-footer">
+            <span class="badge-small">Bahurani Approved ✅</span>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        
+        <!-- Header -->
+        <header class="top-header">
+            <div class="app-icon">
+                <i class="bi bi-music-note-beamed"></i>
+            </div>
+            <div class="header-title">
+                <span>Specially designed for Saasu Maa</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+            </div>
+        </header>
+
         <!-- Home Screen -->
         <section id="home-screen" class="screen active">
-            <div class="container-fluid">
+            <div class="content-wrapper">
+                <h2 class="page-title">Home</h2>
                 
-                <!-- Now Playing Mini Card -->
-                <div class="now-playing-card mb-4">
-                    <div class="d-flex align-items-center gap-3 mb-2">
-                        <div class="now-playing-cover">
-                            <i class="bi bi-music-note-beamed"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h6 class="track-name mb-1">Future Doctor Energy</h6>
-                            <p class="artist-name mb-0">Bahurani Recommended</p>
-                        </div>
-                        <div class="play-controls">
-                            <button class="control-btn"><i class="bi bi-skip-backward-fill"></i></button>
-                            <button class="control-btn play-btn"><i class="bi bi-play-fill"></i></button>
-                            <button class="control-btn"><i class="bi bi-skip-forward-fill"></i></button>
-                        </div>
-                    </div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill" style="width: 45%"></div>
-                    </div>
-                </div>
-
                 <!-- Featured Playlists -->
-                <h5 class="section-title mb-3">Featured Playlists</h5>
-                <div class="row g-3">
-                    <div class="col-6 col-md-3">
-                        <div class="playlist-card" onclick="openPlaylist('neet-warrior')">
-                            <div class="playlist-cover gradient-1">
-                                <i class="bi bi-activity"></i>
-                            </div>
-                            <h6 class="playlist-title">NEET Warrior Mode</h6>
+                <div class="playlists-grid">
+                    <div class="playlist-card-large" onclick="openPlaylist('neet-warrior')">
+                        <div class="album-grid-small">
+                            <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                            <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                            <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                            <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
                         </div>
+                        <h3 class="playlist-card-title">NEET Warrior Mode</h3>
+                        <p class="playlist-card-subtitle">10 songs</p>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <div class="playlist-card" onclick="openPlaylist('chef-specials')">
-                            <div class="playlist-cover gradient-2">
-                                <i class="bi bi-egg-fried"></i>
-                            </div>
-                            <h6 class="playlist-title">Chef Saasu Maa Specials </h6>
+                    
+                    <div class="playlist-card-large" onclick="openPlaylist('chef-specials')">
+                        <div class="album-grid-small">
+                            <div class="album-grid-item gradient-2"><i class="bi bi-egg-fried"></i></div>
+                            <div class="album-grid-item gradient-2"><i class="bi bi-egg-fried"></i></div>
+                            <div class="album-grid-item gradient-2"><i class="bi bi-egg-fried"></i></div>
+                            <div class="album-grid-item gradient-2"><i class="bi bi-egg-fried"></i></div>
                         </div>
+                        <h3 class="playlist-card-title">Chef Saasu Maa Specials</h3>
+                        <p class="playlist-card-subtitle">9 songs</p>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <div class="playlist-card" onclick="openPlaylist('soft-break')">
-                            <div class="playlist-cover gradient-3">
-                                <i class="bi bi-cup-hot"></i>
-                            </div>
-                            <h6 class="playlist-title">Soft Break Time </h6>
+                    
+                    <div class="playlist-card-large" onclick="openPlaylist('soft-break')">
+                        <div class="album-grid-small">
+                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-hot"></i></div>
+                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-hot"></i></div>
+                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-hot"></i></div>
+                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-hot"></i></div>
                         </div>
+                        <h3 class="playlist-card-title">Soft Break Time</h3>
+                        <p class="playlist-card-subtitle">10 songs</p>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <div class="playlist-card" onclick="openPlaylist('bahurani-picks')">
-                            <div class="playlist-cover gradient-4">
-                                <i class="bi bi-heart-fill"></i>
-                            </div>
-                            <h6 class="playlist-title">Bahurani's Picks</h6>
+                    
+                    <div class="playlist-card-large" onclick="openPlaylist('bahurani-picks')">
+                        <div class="album-grid-small">
+                            <div class="album-grid-item gradient-4"><i class="bi bi-heart-fill"></i></div>
+                            <div class="album-grid-item gradient-4"><i class="bi bi-heart-fill"></i></div>
+                            <div class="album-grid-item gradient-4"><i class="bi bi-heart-fill"></i></div>
+                            <div class="album-grid-item gradient-4"><i class="bi bi-heart-fill"></i></div>
                         </div>
+                        <h3 class="playlist-card-title">Bahurani's Picks</h3>
+                        <p class="playlist-card-subtitle">10 songs</p>
+                    </div>
+
+                    <div class="playlist-card-large" onclick="openPlaylist('morning-walk')">
+                        <div class="album-grid-small">
+                            <div class="album-grid-item gradient-1"><i class="bi bi-sunrise"></i></div>
+                            <div class="album-grid-item gradient-1"><i class="bi bi-sunrise"></i></div>
+                            <div class="album-grid-item gradient-1"><i class="bi bi-sunrise"></i></div>
+                            <div class="album-grid-item gradient-1"><i class="bi bi-sunrise"></i></div>
+                        </div>
+                        <h3 class="playlist-card-title">Morning Walk</h3>
+                        <p class="playlist-card-subtitle">6 songs</p>
+                    </div>
+
+                    <div class="playlist-card-large" onclick="openPlaylist('chai-and-chill')">
+                        <div class="album-grid-small">
+                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-straw"></i></div>
+                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-straw"></i></div>
+                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-straw"></i></div>
+                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-straw"></i></div>
+                        </div>
+                        <h3 class="playlist-card-title">Chai & Chill</h3>
+                        <p class="playlist-card-subtitle">6 songs</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <!-- Wrapped Screen -->
         <section id="wrapped-screen" class="screen">
-            <div class="container-fluid">
-                <div class="wrapped-header text-center mb-4">
-                    <h2 class="wrapped-title">Jigyasha Wrapped 2026</h2>
-                    <p class="wrapped-subtitle">Your year in review</p>
-                </div>
-
-                <div class="row g-3">
-                    <div class="col-12 col-md-6">
-                        <div class="stat-card">
-                            <i class="bi bi-clock-history stat-icon"></i>
-                            <h3 class="stat-number">99,999</h3>
-                            <p class="stat-label">Minutes Studied</p>
-                        </div>
+            <div class="content-wrapper">
+                <h2 class="page-title">Jigyasha Wrapped 2026</h2>
+                <p class="page-subtitle">Your year in review</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="bi bi-clock-history stat-icon"></i>
+                        <h3 class="stat-number">99,999</h3>
+                        <p class="stat-label">Minutes Studied</p>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="stat-card">
-                            <i class="bi bi-emoji-smile stat-icon"></i>
-                            <h3 class="stat-number">Future Doctor</h3>
-                            <p class="stat-label">Most Played Mood</p>
-                        </div>
+                    <div class="stat-card">
+                        <i class="bi bi-emoji-smile stat-icon"></i>
+                        <h3 class="stat-number">Future Doctor</h3>
+                        <p class="stat-label">Most Played Mood</p>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="stat-card">
-                            <i class="bi bi-trophy stat-icon"></i>
-                            <h3 class="stat-number">Cooking + Studying</h3>
-                            <p class="stat-label">Skill Unlocked</p>
-                        </div>
+                    <div class="stat-card">
+                        <i class="bi bi-trophy stat-icon"></i>
+                        <h3 class="stat-number">Cooking + Studying</h3>
+                        <p class="stat-label">Skill Unlocked</p>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="stat-card">
-                            <i class="bi bi-lightning-charge stat-icon"></i>
-                            <h3 class="stat-number">Consistency</h3>
-                            <p class="stat-label">Strongest Power</p>
-                        </div>
+                    <div class="stat-card">
+                        <i class="bi bi-lightning-charge stat-icon"></i>
+                        <h3 class="stat-number">Consistency</h3>
+                        <p class="stat-label">Strongest Power</p>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="stat-card">
-                            <i class="bi bi-star-fill stat-icon"></i>
-                            <h3 class="stat-number">Bahurani</h3>
-                            <p class="stat-label">#1 Fan</p>
-                        </div>
+                    <div class="stat-card">
+                        <i class="bi bi-star-fill stat-icon"></i>
+                        <h3 class="stat-number">Bahurani</h3>
+                        <p class="stat-label">#1 Fan</p>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="stat-card">
-                            <i class="bi bi-music-note-list stat-icon"></i>
-                            <h3 class="stat-number">Disciplinecore</h3>
-                            <p class="stat-label">Genre of the Year</p>
-                        </div>
+                    <div class="stat-card">
+                        <i class="bi bi-music-note-list stat-icon"></i>
+                        <h3 class="stat-number">Disciplinecore</h3>
+                        <p class="stat-label">Genre of the Year</p>
                     </div>
-                    <div class="col-12">
-                        <div class="stat-card special-card">
-                            <i class="bi bi-award stat-icon"></i>
-                            <h3 class="stat-number">Unstoppable Force</h3>
-                            <p class="stat-label">Achievement Unlocked: Balancing Dreams & Reality</p>
-                        </div>
+                    <div class="stat-card special-card">
+                        <i class="bi bi-award stat-icon"></i>
+                        <h3 class="stat-number">Unstoppable Force</h3>
+                        <p class="stat-label">Achievement Unlocked: Balancing Dreams & Reality</p>
                     </div>
                 </div>
             </div>
@@ -173,33 +227,39 @@
 
         <!-- Playlist Detail Screen -->
         <section id="playlist-screen" class="screen">
-            <div class="container-fluid">
-                <button class="btn btn-link back-btn mb-3" onclick="goToHome()">
-                    <i class="bi bi-arrow-left"></i> Back
-                </button>
-
-                <div class="playlist-header mb-4">
-                    <div class="row align-items-center">
-                        <div class="col-auto">
-                            <div class="playlist-cover-large gradient-1" id="playlistCoverLarge">
-                                <i class="bi bi-brain"></i>
-                            </div>
+            <div class="content-wrapper">
+                <!-- Playlist Header -->
+                <div class="playlist-detail-header">
+                    <div class="album-grid-large" id="playlistAlbumGrid">
+                        <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                        <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                        <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                        <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                    </div>
+                    <div class="playlist-info">
+                        <h1 class="playlist-detail-title" id="playlistDetailTitle">NEET Warrior Mode</h1>
+                        <div class="playlist-meta">
+                            <span class="meta-item">
+                                <i class="bi bi-person-circle"></i> Bahurani
+                            </span>
+                            <span class="meta-separator">•</span>
+                            <span class="meta-item" id="playlistTrackCount">10 tracks</span>
+                            <span class="meta-separator">•</span>
+                            <span class="meta-item" id="playlistDuration">35 min</span>
                         </div>
-                        <div class="col">
-                            <h3 class="playlist-title-large" id="playlistTitleLarge">NEET Warrior Mode 🧠🔥</h3>
-                            <div class="playlist-tags mb-3" id="playlistTags">
-                                <span class="tag">Study</span>
-                                <span class="tag">Focus</span>
-                                <span class="tag">Hype</span>
-                            </div>
-                            <button class="btn btn-play-all">
-                                <i class="bi bi-play-fill"></i> Play All
+                        <p class="playlist-description">Curated for Saasu Maa's NEET preparation journey</p>
+                        
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <button class="btn-action btn-play" onclick="playAllSongs()">
+                                <i class="bi bi-play-fill"></i> Play
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="song-list" id="songList">
+                <!-- Song List -->
+                <div class="song-list-detailed" id="songListDetailed">
                     <!-- Songs will be populated by JavaScript -->
                 </div>
             </div>
@@ -207,7 +267,7 @@
 
         <!-- Gift Screen -->
         <section id="gift-screen" class="screen">
-            <div class="container-fluid">
+            <div class="content-wrapper">
                 <div class="gift-container">
                     <div class="gift-card">
                         <i class="bi bi-gift gift-icon"></i>
@@ -219,7 +279,7 @@
                             <p>This little app is just a small token of my appreciation for you. You deserve all the happiness in the world.</p>
                             <p class="gift-signature">With love,<br>Bahurani</p>
                         </div>
-                        <button class="btn btn-magic" onclick="showMagic()">
+                        <button class="btn-magic" onclick="showMagic()">
                             Tap for magic
                         </button>
                     </div>
@@ -232,31 +292,70 @@
     <!-- Hidden Audio Player -->
     <audio id="audioPlayer" preload="metadata"></audio>
 
-    <!-- Bottom Navigation -->
+    <!-- Now Playing Bar (Bottom) -->
+    <div class="now-playing-bar">
+        <div class="now-playing-content">
+            <div class="now-playing-left">
+                <div class="now-playing-thumbnail">
+                    <i class="bi bi-music-note-beamed"></i>
+                </div>
+                <div class="now-playing-info">
+                    <h6 class="track-name">Select a song</h6>
+                    <p class="artist-name">Bahurani Recommended</p>
+                </div>
+            </div>
+            
+            <div class="now-playing-center">
+                <div class="player-controls">
+                    <button class="control-btn"><i class="bi bi-shuffle"></i></button>
+                    <button class="control-btn"><i class="bi bi-skip-backward-fill"></i></button>
+                    <button class="control-btn play-btn-large"><i class="bi bi-play-circle-fill"></i></button>
+                    <button class="control-btn"><i class="bi bi-skip-forward-fill"></i></button>
+                    <button class="control-btn"><i class="bi bi-repeat"></i></button>
+                </div>
+                <div class="progress-section">
+                    <span class="time-current">--:--</span>
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="time-total">--:--</span>
+                </div>
+            </div>
+            
+            <div class="now-playing-right">
+                <button class="control-btn"><i class="bi bi-volume-up-fill"></i></button>
+                <button class="control-btn"><i class="bi bi-list-ul"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation (Mobile Only) -->
     <nav class="bottom-nav">
-        <button class="nav-item active" onclick="switchScreen('home')">
-            <i class="bi bi-house-door-fill"></i>
-            <span>Home</span>
-        </button>
-        <button class="nav-item" onclick="switchScreen('wrapped')">
-            <i class="bi bi-bar-chart-fill"></i>
-            <span>Wrapped</span>
-        </button>
-        <button class="nav-item" onclick="switchScreen('playlist')">
-            <i class="bi bi-music-note-list"></i>
-            <span>Playlist</span>
-        </button>
-        <button class="nav-item" onclick="switchScreen('gift')">
-            <i class="bi bi-gift-fill"></i>
-            <span>Gift</span>
-        </button>
+        <div class="bottom-nav-content">
+            <button class="bottom-nav-item active" onclick="switchScreen('home')">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+            </button>
+            <button class="bottom-nav-item" onclick="switchScreen('wrapped')">
+                <i class="bi bi-bar-chart-fill"></i>
+                <span>Wrapped</span>
+            </button>
+            <button class="bottom-nav-item" onclick="openPlaylist('neet-warrior')">
+                <i class="bi bi-music-note-list"></i>
+                <span>Playlists</span>
+            </button>
+            <button class="bottom-nav-item" onclick="switchScreen('gift')">
+                <i class="bi bi-gift-fill"></i>
+                <span>Gift</span>
+            </button>
+        </div>
     </nav>
 
     <!-- Toast for Magic Message -->
-    <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 11; margin-bottom: 80px;">
+    <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 11; margin-bottom: 100px;">
         <div id="magicToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body">
-                You're the best Saasu Maa. Bahurani is proud of you 🤎
+                You're the best Saasu Maa. Bahurani is proud of you
             </div>
         </div>
     </div>
