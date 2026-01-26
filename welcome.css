@@ -1,0 +1,189 @@
+/* ========================================
+   Welcome Screen Overlay
+   ======================================== */
+
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a0a00 0%, #030303 50%, #0a0505 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.welcome-overlay.fade-out {
+    animation: fadeOut 0.8s ease-out forwards;
+}
+
+.welcome-card {
+    background: linear-gradient(135deg, var(--yt-bg-secondary) 0%, var(--yt-bg-elevated) 100%);
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(166, 124, 82, 0.3);
+    animation: slideUp 0.8s ease-out 0.3s both;
+}
+
+.welcome-icon {
+    font-size: 5rem;
+    color: var(--yt-accent-red);
+    margin-bottom: 2rem;
+    animation: bounce 1s ease-in-out 1s infinite;
+}
+
+.welcome-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #f4d9b8 0%, var(--yt-accent-red) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease-out 0.6s both;
+}
+
+.welcome-message {
+    font-size: 1.5rem;
+    color: var(--yt-text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    animation: fadeInUp 0.6s ease-out 0.8s both;
+}
+
+.welcome-message .highlight {
+    color: var(--yt-accent-red);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    color: var(--yt-text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    animation: fadeInUp 0.6s ease-out 1s both;
+}
+
+.welcome-subtitle .signature {
+    color: var(--yt-accent-red);
+    font-weight: 600;
+    font-style: italic;
+}
+
+.welcome-loader {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out 1.2s both;
+}
+
+.loader-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--yt-accent-red) 0%, #f4d9b8 100%);
+    border-radius: 2px;
+    animation: loading 3s ease-in-out forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes loading {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .welcome-card {
+        padding: 3rem 2rem;
+        margin: 1rem;
+    }
+
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    .welcome-message {
+        font-size: 1.2rem;
+    }
+
+    .welcome-message .highlight {
+        font-size: 1.4rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+
+    .welcome-icon {
+        font-size: 4rem;
+    }
+}

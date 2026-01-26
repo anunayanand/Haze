@@ -13,8 +13,30 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="welcome.css">
 </head>
 <body>
+    
+    <!-- Welcome Screen Overlay -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-card">
+            <div class="welcome-icon">
+                <i class="bi bi-music-note-beamed"></i>
+            </div>
+            <h1 class="welcome-title">Welcome Saasu Maa</h1>
+            <p class="welcome-message">
+                to your own personal<br>
+                <span class="highlight">Music Destination</span>
+            </p>
+            <p class="welcome-subtitle">
+                Specially designed and crafted for you<br>
+                by your Bahurani <span class="signature">Anu</span> ❤️
+            </p>
+            <div class="welcome-loader">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
     
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
@@ -81,7 +103,7 @@
         </div>
         
         <div class="sidebar-footer">
-            <span class="badge-small">Bahurani Approved ✅</span>
+            <!-- <span class="badge-small">Bahurani Approved ✅</span> -->
         </div>
     </aside>
 
@@ -112,68 +134,52 @@
                 <div class="playlists-grid">
                     <div class="playlist-card-large" onclick="openPlaylist('neet-warrior')">
                         <div class="album-grid-small">
-                            <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
-                            <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
-                            <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
-                            <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                            <div class="album-grid-item gradient-1" style="background-image: url('./img/study.jpg'); background-position: center; background-size: cover;"></div>
+                            
                         </div>
                         <h3 class="playlist-card-title">NEET Warrior Mode</h3>
-                        <p class="playlist-card-subtitle">10 songs</p>
+                        <p class="playlist-card-subtitle">16 songs</p>
                     </div>
                     
                     <div class="playlist-card-large" onclick="openPlaylist('chef-specials')">
                         <div class="album-grid-small">
-                            <div class="album-grid-item gradient-2"><i class="bi bi-egg-fried"></i></div>
-                            <div class="album-grid-item gradient-2"><i class="bi bi-egg-fried"></i></div>
-                            <div class="album-grid-item gradient-2"><i class="bi bi-egg-fried"></i></div>
-                            <div class="album-grid-item gradient-2"><i class="bi bi-egg-fried"></i></div>
+                            <div class="album-grid-item gradient-2" style="background-image: url('./img/cook.jpg'); background-position: center; background-size: cover;"></div>
+                           
                         </div>
                         <h3 class="playlist-card-title">Chef Saasu Maa Specials</h3>
-                        <p class="playlist-card-subtitle">9 songs</p>
+                        <p class="playlist-card-subtitle">26 songs</p>
                     </div>
                     
                     <div class="playlist-card-large" onclick="openPlaylist('soft-break')">
                         <div class="album-grid-small">
-                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-hot"></i></div>
-                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-hot"></i></div>
-                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-hot"></i></div>
-                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-hot"></i></div>
+                            <div class="album-grid-item gradient-3" style="background-image: url('./img/rest.jpg'); background-position: center; background-size: cover;"></div>
                         </div>
                         <h3 class="playlist-card-title">Soft Break Time</h3>
-                        <p class="playlist-card-subtitle">10 songs</p>
+                        <p class="playlist-card-subtitle">29 songs</p>
                     </div>
                     
                     <div class="playlist-card-large" onclick="openPlaylist('bahurani-picks')">
                         <div class="album-grid-small">
-                            <div class="album-grid-item gradient-4"><i class="bi bi-heart-fill"></i></div>
-                            <div class="album-grid-item gradient-4"><i class="bi bi-heart-fill"></i></div>
-                            <div class="album-grid-item gradient-4"><i class="bi bi-heart-fill"></i></div>
-                            <div class="album-grid-item gradient-4"><i class="bi bi-heart-fill"></i></div>
+                            <div class="album-grid-item gradient-4" style="background-image: url('./img/bahu.jpg'); background-position: center; background-size: cover;"></div>
                         </div>
                         <h3 class="playlist-card-title">Bahurani's Picks</h3>
-                        <p class="playlist-card-subtitle">10 songs</p>
+                        <p class="playlist-card-subtitle">83 songs</p>
                     </div>
 
                     <div class="playlist-card-large" onclick="openPlaylist('morning-walk')">
                         <div class="album-grid-small">
-                            <div class="album-grid-item gradient-1"><i class="bi bi-sunrise"></i></div>
-                            <div class="album-grid-item gradient-1"><i class="bi bi-sunrise"></i></div>
-                            <div class="album-grid-item gradient-1"><i class="bi bi-sunrise"></i></div>
-                            <div class="album-grid-item gradient-1"><i class="bi bi-sunrise"></i></div>
+                            <div class="album-grid-item gradient-1" style="background-image: url('./img/walk.jpg'); background-position: center; background-size: cover;"></div>
                         </div>
                         <h3 class="playlist-card-title">Morning Walk</h3>
-                        <p class="playlist-card-subtitle">6 songs</p>
+                        <p class="playlist-card-subtitle">15 songs</p>
                     </div>
 
                     <div class="playlist-card-large" onclick="openPlaylist('chai-and-chill')">
                         <div class="album-grid-small">
-                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-straw"></i></div>
-                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-straw"></i></div>
-                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-straw"></i></div>
-                            <div class="album-grid-item gradient-3"><i class="bi bi-cup-straw"></i></div>
+                            <div class="album-grid-item gradient-3" style="background-image: url('./img/chai.jpg'); background-position: center; background-size: cover;"></div>
                         </div>
                         <h3 class="playlist-card-title">Chai & Chill</h3>
-                        <p class="playlist-card-subtitle">6 songs</p>
+                        <p class="playlist-card-subtitle">15 songs</p>
                     </div>
                 </div>
             </div>
@@ -182,7 +188,7 @@
         <!-- Wrapped Screen -->
         <section id="wrapped-screen" class="screen">
             <div class="content-wrapper">
-                <h2 class="page-title">Jigyasha Wrapped 2026</h2>
+                <h2 class="page-title">Jigyasa Wrapped 2026</h2>
                 <p class="page-subtitle">Your year in review</p>
                 
                 <div class="stats-grid">
@@ -230,11 +236,8 @@
             <div class="content-wrapper">
                 <!-- Playlist Header -->
                 <div class="playlist-detail-header">
-                    <div class="album-grid-large" id="playlistAlbumGrid">
-                        <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
-                        <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
-                        <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
-                        <div class="album-grid-item gradient-1"><i class="bi bi-activity"></i></div>
+                    <div class="album-cover-large" id="playlistAlbumCover">
+                        <img src="./img/study.jpg" alt="Playlist Cover" class="playlist-cover-image">
                     </div>
                     <div class="playlist-info">
                         <h1 class="playlist-detail-title" id="playlistDetailTitle">NEET Warrior Mode</h1>
@@ -247,7 +250,7 @@
                             <span class="meta-separator">•</span>
                             <span class="meta-item" id="playlistDuration">35 min</span>
                         </div>
-                        <p class="playlist-description">Curated for Saasu Maa's NEET preparation journey</p>
+                        <p class="playlist-description">Bahurani ka tohfa for Sasu Maa, dard ho ya jung, Bahurani aapke saath, har kadam</p>
                         
                         <!-- Action Buttons -->
                         <div class="action-buttons">
@@ -273,7 +276,7 @@
                         <i class="bi bi-gift gift-icon"></i>
                         <h3 class="gift-title">Happy Birthday <br>Saasu Maa</h3>
                         <div class="gift-letter">
-                            <p>Dear Jigyasha,</p>
+                            <p>Dear Jigyasa,</p>
                             <p>I'm so proud of you and everything you're achieving. You work so hard for your NEET preparation, and you still manage to cook amazing food. Your dedication inspires me every day.</p>
                             <p>You're going to make it. I believe in you completely. Keep being the amazing person you are.</p>
                             <p>This little app is just a small token of my appreciation for you. You deserve all the happiness in the world.</p>
@@ -360,7 +363,7 @@
     <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-4" style="z-index: 11; margin-bottom: 7rem;">
         <div id="magicToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="15000" >
             <div class="toast-body text-center py-4 px-5">
-                <p class="mb-0" style="font-size: 1.1rem; color: #fff; font-weight: 500;">To recognize a person, we may need to see them… but to truly know them, their words are enough. <br> Happy Birthday Jigyasha!</p>
+                <p class="mb-0" style="font-size: 1.1rem; color: #fff; font-weight: 500;">To recognize a person, we may need to see them… but to truly know them, their words are enough. <br> Happy Birthday Jigyasa!</p>
             </div>
         </div>
     </div>
