@@ -120,7 +120,7 @@ const PLAYLIST_DATA = {
     {
       "title": "Espresso",
       "artist": "Unknown Artist",
-      "file": "music/chef-specials/Espresso.mp3",
+      "file": "music/morning-walk/Espresso.mp3",
       "duration": "2:55"
     },
     {
@@ -442,13 +442,13 @@ const PLAYLIST_DATA = {
     {
       "title": "Skyfall",
       "artist": "Unknown Artist",
-      "file": "music/bahurani-picks/Skyfall.mp3",
+      "file": "music/soft-break/Skyfall.mp3",
       "duration": "4:46"
     },
     {
       "title": "Fairytale",
       "artist": "Unknown Artist",
-      "file": "music/bahurani-picks/Fairytale.mp3",
+      "file": "music/soft-break/Fairytale.mp3",
       "duration": "3:02"
     },
     {
@@ -478,13 +478,13 @@ const PLAYLIST_DATA = {
     {
       "title": "STAY",
       "artist": "Unknown Artist",
-      "file": "music/bahurani-picks/STAY.mp3",
+      "file": "music/morning-walk/STAY.mp3",
       "duration": "2:21"
     },
     {
       "title": "Arcade",
       "artist": "Unknown Artist",
-      "file": "music/bahurani-picks/Arcade.mp3",
+      "file": "music/chai-and-chill/Arcade.mp3",
       "duration": "3:07"
     },
     {
@@ -508,7 +508,7 @@ const PLAYLIST_DATA = {
     {
       "title": "Intentions",
       "artist": "Unknown Artist",
-      "file": "music/bahurani-picks/Intentions.mp3",
+      "file": "music/morning-walk/Intentions.mp3",
       "duration": "3:32"
     },
     {
@@ -844,7 +844,7 @@ const PLAYLIST_DATA = {
     {
       "title": "Satranga",
       "artist": "Unknown Artist",
-      "file": "music/bahurani-picks/Satranga.mp3",
+      "file": "music/chai-and-chill/Satranga.mp3",
       "duration": "4:31"
     },
     {
@@ -948,13 +948,13 @@ const PLAYLIST_DATA = {
     {
       "title": "Fairytale",
       "artist": "Unknown Artist",
-      "file": "music/morning-walk/Fairytale.mp3",
+      "file": "music/soft-break/Fairytale.mp3",
       "duration": "3:02"
     },
     {
       "title": "Dandelions",
       "artist": "Unknown Artist",
-      "file": "music/morning-walk/Dandelions.mp3",
+      "file": "music/soft-break/Dandelions.mp3",
       "duration": "3:53"
     },
     {
@@ -1040,7 +1040,7 @@ const PLAYLIST_DATA = {
     {
       "title": "Khairiyat",
       "artist": "Unknown Artist",
-      "file": "music/chai-and-chill/Khairiyat.mp3",
+      "file": "music/soft-break/Khairiyat.mp3",
       "duration": "4:40"
     },
     {
@@ -1082,7 +1082,7 @@ const PLAYLIST_DATA = {
     {
       "title": "Sajni",
       "artist": "Unknown Artist",
-      "file": "music/chai-and-chill/Sajni.mp3",
+      "file": "music/soft-break/Sajni.mp3",
       "duration": "2:50"
     },
     {
