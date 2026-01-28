@@ -1222,6 +1222,18 @@ function initAudioPlayer() {
         // Try next song on error
         skipNext();
     });
+    
+    // Progress bar click to seek
+    const progressBarTrack = document.querySelector('.progress-bar-track');
+    if (progressBarTrack) {
+        progressBarTrack.addEventListener('click', (e) => {
+            const rect = progressBarTrack.getBoundingClientRect();
+            const clickPosition = (e.clientX - rect.left) / rect.width;
+            if (audio.duration) {
+                audio.currentTime = clickPosition * audio.duration;
+            }
+        });
+    }
 }
 
 function loadSong(playlistId, songIndex) {
