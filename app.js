@@ -1382,6 +1382,11 @@ function switchScreen(screenName) {
     const screenId = screenName + '-screen';
     document.getElementById(screenId).classList.add('active');
     
+    // Trigger confetti when opening gift screen
+    if (screenName === 'gift') {
+        createConfetti();
+    }
+    
     // Update sidebar navigation
     document.querySelectorAll('.sidebar-nav .nav-link').forEach(item => {
         item.classList.remove('active');
@@ -1399,12 +1404,10 @@ function switchScreen(screenName) {
     if (screenName === 'home') {
         if (navLinks[0]) navLinks[0].classList.add('active');
         if (bottomNavItems[0]) bottomNavItems[0].classList.add('active');
-    }
-    if (screenName === 'wrapped') {
+    } else if (screenName === 'wrapped') {
         if (navLinks[1]) navLinks[1].classList.add('active');
         if (bottomNavItems[1]) bottomNavItems[1].classList.add('active');
-    }
-    if (screenName === 'gift') {
+    } else if (screenName === 'gift') {
         if (navLinks[2]) navLinks[2].classList.add('active');
         if (bottomNavItems[3]) bottomNavItems[3].classList.add('active');
     }
@@ -1635,6 +1638,52 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     });
 });
+
+// ========================================
+// Confetti Animation for Birthday
+// ========================================
+
+function createConfetti() {
+    const confettiContainer = document.getElementById('confettiContainer');
+    if (!confettiContainer) return;
+    
+    // Clear existing confetti
+    confettiContainer.innerHTML = '';
+    
+    const colors = ['#ff6b9d', '#c44569', '#ffa8c5', '#ffeb3b', '#ff9800', '#9c27b0', '#e91e63', '#f06292'];
+    const confettiCount = 100;
+    
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        
+        // Random properties
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const left = Math.random() * 100;
+        const animationDelay = Math.random() * 3;
+        const animationDuration = 3 + Math.random() * 2;
+        const size = 5 + Math.random() * 10;
+        
+        confetti.style.left = left + '%';
+        confetti.style.backgroundColor = color;
+        confetti.style.width = size + 'px';
+        confetti.style.height = size + 'px';
+        confetti.style.animationDelay = animationDelay + 's';
+        confetti.style.animationDuration = animationDuration + 's';
+        
+        // Random shapes
+        if (Math.random() > 0.5) {
+            confetti.style.borderRadius = '50%';
+        }
+        
+        confettiContainer.appendChild(confetti);
+    }
+    
+    // Clear confetti after animation completes
+    setTimeout(() => {
+        confettiContainer.innerHTML = '';
+    }, 6000);
+}
 
 // ========================================
 // Birthday Surprise Functions

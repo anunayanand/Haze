@@ -684,6 +684,233 @@ body {
    Gift Screen - Birthday Special
    ======================================== */
 
+/* Confetti Animation */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    animation: confetti-fall 4s linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotateZ(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotateZ(720deg);
+        opacity: 0;
+    }
+}
+
+/* Birthday Banner */
+.birthday-banner {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #ff6b9d 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 30px rgba(255, 107, 157, 0.6),
+        0 0 60px rgba(255, 107, 157, 0.4),
+        0 0 90px rgba(255, 107, 157, 0.2);
+    animation: banner-pulse 2s ease-in-out infinite, gradient-shift 3s ease infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes banner-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(255, 107, 157, 0.6),
+            0 0 60px rgba(255, 107, 157, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(255, 107, 157, 0.8),
+            0 0 80px rgba(255, 107, 157, 0.6),
+            0 0 120px rgba(255, 107, 157, 0.4);
+    }
+}
+
+.banner-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.banner-sparkle {
+    font-size: 1.8rem;
+    animation: sparkle-rotate 2s ease-in-out infinite;
+}
+
+@keyframes sparkle-rotate {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(-15deg) scale(1.2);
+    }
+
+    75% {
+        transform: rotate(15deg) scale(1.2);
+    }
+}
+
+/* Birthday Cake Animation */
+.birthday-cake-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    animation: cake-float 3s ease-in-out infinite;
+}
+
+@keyframes cake-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.cake {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.candle {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 30px;
+    background: linear-gradient(180deg, #ff6b9d 0%, #c44569 100%);
+    border-radius: 4px 4px 0 0;
+    z-index: 10;
+}
+
+.flame {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, #fff 0%, #ffeb3b 30%, #ff9800 60%, #ff6b9d 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flame-flicker 0.3s ease-in-out infinite alternate;
+    box-shadow: 0 0 20px #ffeb3b,
+        0 0 40px #ff9800;
+}
+
+@keyframes flame-flicker {
+    0% {
+        transform: translateX(-50%) scale(1) translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1.1) translateY(-2px);
+        opacity: 0.9;
+    }
+}
+
+.cake-layer {
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.layer-top {
+    height: 30px;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ffa8c5 100%);
+    border: 3px solid #fff;
+    z-index: 3;
+}
+
+.layer-middle {
+    height: 35px;
+    background: linear-gradient(135deg, #c44569 0%, #ff6b9d 100%);
+    border: 3px solid #fff;
+    margin-top: -3px;
+    z-index: 2;
+}
+
+.layer-bottom {
+    height: 40px;
+    background: linear-gradient(135deg, #a83a5a 0%, #c44569 100%);
+    border: 3px solid #fff;
+    margin-top: -3px;
+    z-index: 1;
+}
+
+/* Add decorative frosting dots */
+.layer-top::before,
+.layer-middle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.6) 10px,
+            rgba(255, 255, 255, 0.6) 15px);
+    transform: translateY(-50%);
+}
+
+
 .gift-container {
     position: relative;
     display: flex;
@@ -860,23 +1087,24 @@ body {
 .birthday-title {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #d4a574 0%, #a67c52 100%);
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #ff6b9d 100%);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 0.5rem;
-    animation: title-glow 3s infinite ease-in-out;
+    animation: title-glow 3s infinite ease-in-out, gradient-shift 3s ease infinite;
 }
 
 @keyframes title-glow {
 
     0%,
     100% {
-        filter: drop-shadow(0 0 10px rgba(166, 124, 82, 0.3));
+        filter: drop-shadow(0 0 15px rgba(255, 107, 157, 0.5));
     }
 
     50% {
-        filter: drop-shadow(0 0 20px rgba(166, 124, 82, 0.6));
+        filter: drop-shadow(0 0 30px rgba(255, 107, 157, 0.8));
     }
 }
 
@@ -885,6 +1113,20 @@ body {
     font-weight: 600;
     color: var(--yt-text-primary);
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 107, 157, 0.4);
+    animation: name-pulse 2s ease-in-out infinite;
+}
+
+@keyframes name-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .birthday-subtitle {
@@ -892,6 +1134,7 @@ body {
     color: var(--yt-text-secondary);
     font-style: italic;
 }
+
 
 /* Gift Card */
 .gift-card {
