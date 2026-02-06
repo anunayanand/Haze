@@ -288,20 +288,86 @@
         <!-- Gift Screen -->
         <section id="gift-screen" class="screen">
             <div class="content-wrapper">
+                <!-- Floating Hearts Background -->
+                <div class="floating-hearts">
+                    <i class="bi bi-heart-fill heart"></i>
+                    <i class="bi bi-heart-fill heart"></i>
+                    <i class="bi bi-heart-fill heart"></i>
+                    <i class="bi bi-heart-fill heart"></i>
+                    <i class="bi bi-heart-fill heart"></i>
+                    <i class="bi bi-heart-fill heart"></i>
+                </div>
+
                 <div class="gift-container">
-                    <div class="gift-card">
-                        <i class="bi bi-gift gift-icon"></i>
-                        <h3 class="gift-title">Happy Birthday <br>Saasu Maa</h3>
-                        <div class="gift-letter">
-                            <p>Dear Jigyasa,</p>
-                            <p>I'm so proud of you and everything you're achieving. You work so hard for your NEET preparation, and you still manage to cook amazing food. Your dedication inspires me every day.</p>
-                            <p>You're going to make it. I believe in you completely. Keep being the amazing person you are.</p>
-                            <p>This little app is just a small token of my appreciation for you. You deserve all the happiness in the world.</p>
-                            <p class="gift-signature">With love,<br>Bahurani</p>
+                    <!-- Birthday Header -->
+                    <div class="birthday-header">
+                        <div class="gift-box-animated">
+                            <i class="bi bi-gift"></i>
                         </div>
-                        <button class="btn-magic" onclick="showMagic()">
-                            Tap for magic
+                        <h1 class="birthday-title">Happy Birthday</h1>
+                        <h2 class="birthday-name">Jigyasa ✨</h2>
+                        <p class="birthday-subtitle">From your Bahurani with love</p>
+                    </div>
+
+                    <!-- Personal Letter Card -->
+                    <div class="gift-card">
+                        <div class="letter-header">
+                            <i class="bi bi-envelope-heart"></i>
+                            <span>A Special Message For You</span>
+                        </div>
+                        
+                        <div class="gift-letter">
+                            <p class="letter-greeting">Jigyasa,</p>
+                            
+                            <p>Hamari ye Saasu Maa Bahurani wali nok-jhok bas mazaak se shuru hui thi, lekin dheere-dheere iske beech jo simple si dosti bani hai na, wahi sabse achhi cheez lagti hai. Har baat mein seriousness zaroori nahi hoti, kabhi-kabhi ye chhoti-chhoti hasi-mazaak wali conversations hi din ko halka aur yaadgar bana deti hain. Shayad isi wajah se hamari baatein hamesha natural lagti hain  na koi formality, na koi extra expectation, bas ek normal si comfortable dosti jahan baat karne ke liye kisi special reason ki zaroorat nahi padti.</p>
+                            
+                            <p>Kabhi random topics par baat ho jaati hai, kabhi thodi serious discussions bhi ho jaati hain, par har baar ek cheez same rehti hai  baat khatam hone ke baad ek simple sa achha feel reh jaata hai. Shayad isi tarah ki normal aur easy conversations hi dosti ko natural banaye rakhti hain, kyunki har waqt bade moments zaroori nahi hote; kabhi-kabhi seedhi-saadhi baatein hi sabse zyada yaad reh jaati hain, bina kisi extra expectation ya pressure ke.</p>
+                            
+                            <p>Hamesha haste raho, apne goals ke liye aage badhte raho, aur life ko thoda serious bhi lo aur thoda mast rehkar bhi jiyo kyunki asli balance wahi hota hai jahan responsibilities bhi chalti rahein aur smile bhi kabhi kam na ho. Kabhi cheezein fast chalengi, kabhi thodi slow, par agar aap apne tareeke se consistent rehte ho, toh har phase apne-aap meaningful ban jaata hai.</p>
+                            
+                            <p>Bas aaj ke din itni si wish hai ki aap jo bhi plan karo, jis direction mein aage badho, wahan aapko satisfaction mile aur beech ka safar bhi utna hi enjoy ho. Kyunki end mein sirf destination nahi, balki journey ka feel hi sabse zyada yaad rehta hai.</p>
+                            <p class="letter-closing">To recognize a person, we may need to see them… but to truly know them, their words are enough. <br> Happy Birthday Jigyasa!</p>
+                            
+                            <p class="gift-signature">
+                                <span class="signature-name">Anu</span> ❤️
+                            </p>
+                        </div>
+
+                        <!-- Birthday Wishes -->
+                        <div class="birthday-wishes">
+                            <div class="wish-item">
+                                <i class="bi bi-alarm-fill"></i>
+                                <span>Sapne itne bade ho ki alarm bhi dare bajne se</span>
+                            </div>
+                            <div class="wish-item">
+                                <i class="bi bi-trophy-fill"></i>
+                                <span>NEET crack karo aur Bahurani ka naam roshan karo</span>
+                            </div>
+                            <div class="wish-item">
+                                <i class="bi bi-emoji-smile-fill"></i>
+                                <span>Khush raho, healthy raho, aur thoda Bahurani ko bhi yaad rakhna</span>
+                            </div>
+                        </div>
+
+                        <!-- Magic Button -->
+                        <button class="btn-magic" onclick="revealBirthdaySurprise()">
+                            <i class="bi bi-sparkles"></i>
+                            <span>Tap for a Birthday Surprise</span>
+                            <i class="bi bi-sparkles"></i>
                         </button>
+                    </div>
+
+                    <!-- Hidden Surprise Video -->
+                    <div class="surprise-message" id="surpriseMessage">
+                        <div class="surprise-video-container">
+                            <video id="surpriseVideo" class="surprise-video" preload="auto">
+                                <source src="./music/gift.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <button class="btn-close-surprise" onclick="closeSurprise()">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

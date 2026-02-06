@@ -1635,3 +1635,79 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     });
 });
+
+// ========================================
+// Birthday Surprise Functions
+// ========================================
+
+function revealBirthdaySurprise() {
+    const surpriseModal = document.getElementById('surpriseMessage');
+    const surpriseVideo = document.getElementById('surpriseVideo');
+    
+    if (surpriseModal && surpriseVideo) {
+        // Show the modal
+        surpriseModal.classList.add('active');
+        
+        // Reset video to start
+        surpriseVideo.currentTime = 0;
+        
+        // Play the video
+        surpriseVideo.play().catch(err => {
+            console.log('Video play failed:', err);
+        });
+        
+        // Auto-close when video ends
+        surpriseVideo.onended = function() {
+            closeSurprise();
+        };
+        
+        // Try to enter fullscreen (optional, may require user gesture)
+        if (surpriseVideo.requestFullscreen) {
+            surpriseVideo.requestFullscreen().catch(err => {
+                console.log('Fullscreen request failed:', err);
+            });
+        } else if (surpriseVideo.webkitRequestFullscreen) {
+            surpriseVideo.webkitRequestFullscreen().catch(err => {
+                console.log('Fullscreen request failed:', err);
+            });
+        } else if (surpriseVideo.mozRequestFullScreen) {
+            surpriseVideo.mozRequestFullScreen().catch(err => {
+                console.log('Fullscreen request failed:', err);
+            });
+        } else if (surpriseVideo.msRequestFullscreen) {
+            surpriseVideo.msRequestFullscreen().catch(err => {
+                console.log('Fullscreen request failed:', err);
+            });
+        }
+    }
+}
+
+function closeSurprise() {
+    const surpriseModal = document.getElementById('surpriseMessage');
+    const surpriseVideo = document.getElementById('surpriseVideo');
+    
+    if (surpriseModal) {
+        surpriseModal.classList.remove('active');
+        
+        // Pause and reset video
+        if (surpriseVideo) {
+            surpriseVideo.pause();
+            surpriseVideo.currentTime = 0;
+        }
+        
+        // Exit fullscreen if active
+        if (document.fullscreenElement || document.webkitFullscreenElement || 
+            document.mozFullScreenElement || document.msFullscreenElement) {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
+}
+
